@@ -1,1 +1,1 @@
-export * from "./react/useAdaptiveLayout";
+export * from "./react";

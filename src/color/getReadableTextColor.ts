@@ -1,7 +1,9 @@
-import { parseCSSColor, getLuminance } from "../utils/colorUtils";
+import {getLuminance, parseCSSColor} from "../utils/colorUtils";
 
-export function getReadableTextColor(color: string): "#000" | "#fff" {
-    const rgb = parseCSSColor(color);
-    if (!rgb) return "#000";
-    return getLuminance(rgb) > 0.55 ? "#000" : "#fff"; // umbral 0 · 55 ≈ AA
+
+/** Returns '#000' or '#fff' for best contrast (WCAG AA ~ 4.5:1) */
+export function getReadableTextColor(bg: string): '#000' | '#fff' {
+    const rgb = parseCSSColor(bg);
+    if (!rgb) return '#000';
+    return getLuminance(rgb) > 0.5 ? '#000' : '#fff';
 }

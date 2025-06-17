@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getAdaptiveLayout } from "../core/adaptiveLayout";
-import {Breakpoint, Layout} from "../utils/types";
+import { getAdaptiveLayout } from "../../core/adaptiveLayout";
+import {Breakpoint, Layout} from "../../utils";
 
 export function useAdaptiveLayout(breakpoints: Breakpoint[]): Layout {
     const [layout, setLayout] = useState<Layout>(() =>

@@ -4,8 +4,9 @@ import { createRoot } from 'react-dom/client';
 import LayoutDemo from './demos/LayoutDemo';
 import AvatarsDemo from './demos/AvatarsDemo';
 import ThemeSiteDemo from './demos/ThemeSiteDemo';
+import UiUtilsPlayground from "./demos/UiUtilsPlayground";
 
-type Tab = 'layout' | 'avatars' | 'theme';
+type Tab = 'layout' | 'avatars' | 'theme' | 'ui-utils';
 
 const TabButton = ({ id, active, onClick, children }: any) => (
     <button
@@ -40,11 +41,15 @@ function App() {
                 <TabButton id="theme" active={tab === 'theme'} onClick={setTab}>
                     Theme Creator
                 </TabButton>
+                <TabButton id="ui-utils" active={tab === 'ui-utils'} onClick={setTab}>
+                    UI Utils
+                </TabButton>
             </header>
 
             {tab === 'layout' && <LayoutDemo />}
             {tab === 'avatars' && <AvatarsDemo />}
             {tab === 'theme' && <ThemeSiteDemo />}
+            {tab === 'ui-utils' && <UiUtilsPlayground />}
         </div>
     );
 }
